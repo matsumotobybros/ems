@@ -1,12 +1,11 @@
 # EMS(Event Manager System)
 
-## Build Setup
-
-# set firebase config
+## set firebase config
 
 1. Rename `./firebase/config.sample.js` to `./firebase/config.js`
 2. Set configuration in ./firebase/config.js
 
+## Build Setup
 ```bash
 # install dependencies
 $ yarn install
