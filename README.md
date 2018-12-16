@@ -1,6 +1,4 @@
-# nuxt-course
-
-> Nuxt.js course for Udemy
+# EMS(Event Manager System)
 
 ## Build Setup
 
@@ -23,5 +21,3 @@ $ yarn start
 # generate static project
 $ yarn run generate
 ```
-
-For detailed explanation on how things work, checkout [Nuxt.js docs](https://nuxtjs.org).
