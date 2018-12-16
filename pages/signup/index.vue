@@ -1,11 +1,11 @@
 <template>
   <div class="admin-page">
-    <section class="new-post">
-      <AppButton @click="$router.push('/admin/new-post')">Create Post</AppButton>
+    <section class="new-event">
+      <AppButton @click="$router.push('/events/new-event')">Create New Event</AppButton>
       <AppButton style="margin-left: 10px" @click="onLogout">Logout</AppButton>
     </section>
-    <section class="existing-posts">
-      <h1>Existing Posts</h1>
+    <section class="existing-events">
+      <h1>Existing Events</h1>
       <EventList
         isAdmin
         :events="loadedEvents" />
@@ -36,13 +36,13 @@ export default {
   padding: 20px;
 }
 
-.new-post {
+.new-event {
   text-align: center;
   border-bottom: 2px solid #ccc;
   padding-bottom: 10px;
 }
 
-.existing-posts h1 {
+.existing-events h1 {
   text-align: center;
 }
 </style>

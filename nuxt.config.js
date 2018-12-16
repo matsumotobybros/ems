@@ -1,6 +1,11 @@
 const pkg = require("./package");
 const bodyParser = require("body-parser");
 const { baseUrl, fbAPIKey } = require("./firebase/config.js");
+// const { authDomain, apiKey } = require("./firebase/config.js");
+// var baseUrl = "https://" + authDomain;
+// var fbAPIKey = apiKey;
+// console.log(baseUrl);
+// console.log(fbAPIKey);
 
 module.exports = {
   mode: "universal",
