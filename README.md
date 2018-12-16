@@ -4,7 +4,12 @@
 
 ## Build Setup
 
-``` bash
+# set firebase config
+
+1. Rename `./firebase/config.sample.js` to `./firebase/config.js`
+2. Set configuration in ./firebase/config.js
+
+```bash
 # install dependencies
 $ yarn install
 

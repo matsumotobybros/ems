@@ -1,14 +1,14 @@
 <template>
   <form @submit.prevent="onSave">
-    <AppControlInput v-model="editedPost.author">Author Name</AppControlInput>
-    <AppControlInput v-model="editedPost.title">Title</AppControlInput>
-    <AppControlInput v-model="editedPost.thumbnail">Thumbnail Link</AppControlInput>
+    <AppControlInput v-model="editedEvent.author">Author Name</AppControlInput>
+    <AppControlInput v-model="editedEvent.title">Title</AppControlInput>
+    <AppControlInput v-model="editedEvent.thumbnail">Thumbnail Link</AppControlInput>
     <AppControlInput
       control-type="textarea"
-      v-model="editedPost.content">Content</AppControlInput>
+      v-model="editedEvent.content">Content</AppControlInput>
     <AppControlInput
       control-type="textarea"
-      v-model="editedPost.previewText">Preview Text</AppControlInput>
+      v-model="editedEvent.previewText">Preview Text</AppControlInput>
     <AppButton type="submit">Save</AppButton>
     <AppButton
       type="button"
@@ -21,15 +21,15 @@
 <script>
 export default {
   props: {
-    post: {
+    event: {
       type: Object,
       required: false
     }
   },
   data() {
     return {
-      editedPost: this.post
-        ? { ...this.post }
+      editedEvent: this.event
+        ? { ...this.event }
         : {
             author: "",
             title: "",
@@ -41,12 +41,12 @@ export default {
   },
   methods: {
     onSave() {
-      // Save the post
-      this.$emit('submit', this.editedPost)
+      // Save the event
+      this.$emit('submit', this.editedEvent)
     },
     onCancel() {
       // Navigate back
-      this.$router.push("/admin");
+      this.$router.push("/signup");
     }
   }
 };

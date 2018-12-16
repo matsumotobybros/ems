@@ -1,6 +1,6 @@
 <template>
-  <div class="posts-page">
-    <PostList :posts="loadedPosts" />
+  <div class="events-page">
+    <EventList :events="loadedEvents" />
   </div>
 </template>
 
@@ -8,8 +8,8 @@
 export default {
   middleware: 'log',
   computed: {
-    loadedPosts() {
-      return this.$store.getters.loadedPosts
+    loadedEvents() {
+      return this.$store.getters.loadedEvents
     }
   }
 };
@@ -17,7 +17,7 @@ export default {
 
 
 <style scoped>
-.posts-page {
+.events-page {
   display: flex;
   justify-content: center;
   align-items: center;

@@ -1,7 +1,7 @@
 <template>
   <div class="admin-post-page">
     <section class="update-form">
-      <AdminPostForm :post="loadedPost" @submit="onSubmitted" />
+      <AdminPostForm :event="loadedEvent" @submit="onSubmitted" />
     </section>
   </div>
 </template>
@@ -24,7 +24,7 @@ export default {
       )
       .then(data => {
         return {
-          loadedPost: { ...data, id: context.params.postId }
+          loadedEvent: { ...data, id: context.params.postId }
         };
       })
       .catch(e => context.error());
@@ -32,7 +32,7 @@ export default {
   methods: {
     onSubmitted(editedPost) {
       this.$store.dispatch("editPost", editedPost).then(() => {
-        this.$router.push("/admin");
+        this.$router.push("/");
       });
     }
   }

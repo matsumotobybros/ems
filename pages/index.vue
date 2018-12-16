@@ -2,19 +2,19 @@
   <div class="home-page">
     <section class="intro">
     </section>
-    <PostList :posts="loadedPosts" />
+    <EventList :events="loadedEvents" />
   </div>
 </template>
 
 <script>
-import PostList from '~/components/Posts/PostList'
+import EventList from '~/components/Events/EventList'
 export default {
   components: {
-    PostList
+    EventList
   },
   computed: {
-    loadedPosts() {
-      return this.$store.getters.loadedPosts
+    loadedEvents() {
+      return this.$store.getters.loadedEvents
     }
   }
   //- data() {

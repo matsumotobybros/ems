@@ -1,29 +1,29 @@
 <template>
-  <section class="post-list">
-    <PostPreview
-      v-for="post in posts"
-      :key="post.id"
-      :id="post.id"
+  <section class="event-list">
+    <EventPreview
+      v-for="event in events"
+      :key="event.id"
+      :id="event.id"
       :is-admin="isAdmin"
-      :thumbnail="post.thumbnail"
-      :title="post.title"
-      :previewText="post.previewText" />
+      :thumbnail="event.thumbnail"
+      :title="event.title"
+      :previewText="event.previewText" />
   </section>
 </template>
 
 <script>
-import PostPreview from '@/components/Posts/PostPreview'
+import EventPreview from '@/components/Events/EventPreview'
 
 export default {
   components: {
-    PostPreview
+    EventPreview
   },
   props: {
     isAdmin: {
       type: Boolean,
       default: false
     },
-    posts: {
+    events: {
       type: Array,
       required: true
     }
@@ -34,7 +34,7 @@ export default {
 
 <style scoped>
 
-.post-list {
+.event-list {
   display: flex;
   padding: 20px;
   box-sizing: border-box;

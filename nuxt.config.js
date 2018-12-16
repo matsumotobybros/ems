@@ -1,5 +1,6 @@
 const pkg = require("./package");
 const bodyParser = require("body-parser");
+const { baseUrl, fbAPIKey } = require("./firebase/config.js");
 
 module.exports = {
   mode: "universal",
@@ -8,7 +9,7 @@ module.exports = {
    ** Headers of the page
    */
   head: {
-    title: "Matsu Blog",
+    title: "EMS",
     meta: [
       { charset: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
@@ -51,7 +52,7 @@ module.exports = {
    */
   modules: ["@nuxtjs/axios"],
   axios: {
-    baseURL: process.env.BASE_URL || "https://meet-up-632bf.firebaseio.com/",
+    baseURL: process.env.BASE_URL || baseUrl,
     credentials: false
   },
 
@@ -65,8 +66,8 @@ module.exports = {
     extend(config, ctx) {}
   },
   env: {
-    baseUrl: process.env.BASE_URL || "https://meet-up-632bf.firebaseio.com/",
-    fbAPIKey: "AIzaSyBh5-RgOfrCijUkq6_sY5V4sjrI1ftTELA"
+    baseUrl: process.env.BASE_URL || baseUrl,
+    fbAPIKey: fbAPIKey
   },
   transition: {
     name: "fade",

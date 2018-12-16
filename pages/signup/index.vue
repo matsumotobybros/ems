@@ -6,9 +6,9 @@
     </section>
     <section class="existing-posts">
       <h1>Existing Posts</h1>
-      <PostList
+      <EventList
         isAdmin
-        :posts="loadedPosts" />
+        :events="loadedEvents" />
     </section>
   </div>
 </template>
@@ -18,14 +18,14 @@ export default {
   layout: "admin",
   middleware: ["check-auth", "auth"],
   computed: {
-    loadedPosts() {
-      return this.$store.getters.loadedPosts;
+    loadedEvents() {
+      return this.$store.getters.loadedEvents;
     }
   },
   methods: {
     onLogout() {
       this.$store.dispatch("logout");
-      this.$router.push("/admin/auth");
+      this.$router.push("/signup/auth");
     }
   }
 };

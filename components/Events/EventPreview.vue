@@ -1,10 +1,10 @@
 <template>
-  <nuxt-link :to="postLink" class="post-preview">
+  <nuxt-link :to="eventLink" class="event-preview">
     <article>
       <div
-        class="post-thumbnail"
+        class="event-thumbnail"
         :style="{backgroundImage: 'url(' + thumbnail + ')'}"></div>
-      <div class="post-content">
+      <div class="event-content">
         <h1>{{ title }}</h1>
         <p>{{ previewText }}</p>
       </div>
@@ -14,7 +14,7 @@
 
 <script>
 export default {
-  name: 'PostPreview',
+  name: 'EventPreview',
   props: {
     id: {
       type: String,
@@ -38,8 +38,8 @@ export default {
     }
   },
   computed: {
-    postLink() {
-      return this.isAdmin ? '/admin/' + this.id : '/posts/' + this.id
+    eventLink() {
+      return this.isAdmin ? '/signup/' + this.id : '/events/' + this.id
     }
   }
 }
@@ -47,7 +47,7 @@ export default {
 
 
 <style scoped>
-.post-preview {
+.event-preview {
   border: 1px solid #ccc;
   box-shadow: 0 2px 2px #ccc;
   background-color: white;
@@ -60,26 +60,26 @@ a {
 }
 
 @media (min-width: 850px) {
-  .post-preview {
+  .event-preview {
     width: 400px;
     margin: 10px;
   }
 }
 
-.post-thumbnail {
+.event-thumbnail {
   width: 100%;
   height: 200px;
   background-position: center;
   background-size: cover;
 }
 
-.post-content {
+.event-content {
   padding: 10px;
   text-align: center;
 }
 
-a:hover .post-content,
-a:active .post-content {
+a:hover .event-content,
+a:active .event-content {
   background-color: #ccc;
 }
 </style>

@@ -11,9 +11,12 @@
       <ul
         class="nav-list"
         @click="$emit('close')">
-        <li class="nav-item"><nuxt-link to="/posts">Blog</nuxt-link></li>
-        <li class="nav-item"><nuxt-link to="/about">About</nuxt-link></li>
-        <li class="nav-item"><nuxt-link to="/admin">Admin</nuxt-link></li>
+        <li class="nav-item"><nuxt-link to="/events">Events</nuxt-link></li>
+        <li class="nav-item"><nuxt-link to="/groups">Groups</nuxt-link></li>
+        <li v-show="!isAuthenticated" class="nav-item"><nuxt-link to="/signup">Sign in</nuxt-link></li>
+        <li v-show="!isAuthenticated"  class="nav-item"><nuxt-link to="/signup">Sign up</nuxt-link></li>
+        <li v-show="isAuthenticated"  class="nav-item"><nuxt-link to="/signup">Edit Host Events</nuxt-link></li>
+        <li v-show="isAuthenticated"  class="nav-item"><AppButton class="loglogout-btn" @click="onLogout">Logout</AppButton></li>
       </ul>
     </div>
   </transition>
@@ -27,6 +30,14 @@ export default {
     show: {
       type: Boolean,
       default: false
+    },
+    isAuthenticated: {
+      type: Boolean,
+      required: true
+    },
+    onLogout: {
+      type: Function,
+      required: true
     }
   }
 };

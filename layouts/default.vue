@@ -1,7 +1,7 @@
 <template>
   <div>
-    <TheHeader @sidenavToggle="displaySidenav = !displaySidenav" />
-    <TheSidenav
+    <TheHeader :isAuthenticated="isAuthenticated" :onLogout="onLogout" @sidenavToggle="displaySidenav = !displaySidenav" />
+    <TheSidenav :isAuthenticated="isAuthenticated" :onLogout="onLogout"
       :show="displaySidenav"
       @close="displaySidenav = false" />
     <nuxt/>
@@ -22,7 +22,19 @@ export default {
     return {
       displaySidenav: false
     }
+  },
+  computed: {
+    isAuthenticated() {
+      return this.$store.getters.isAuthenticated
+    }
+  },
+  methods: {
+    onLogout() {
+      this.$store.dispatch("logout");
+      this.$router.push("/");
+    }
   }
+
 }
 </script>
 

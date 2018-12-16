@@ -19,7 +19,7 @@ export default {
   methods: {
     onSubmitted(postData) {
       this.$store.dispatch("addPost", postData).then(() => {
-        this.$router.push("/admin");
+        this.$router.push("/signup");
       });
     }
   }
